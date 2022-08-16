@@ -25,14 +25,14 @@ import io.restassured.response.Response;
 
 @Feature("Playlist API")
 @Story("Playlist CRUD Operation")
-public class PlaylistTests {
+public class PlaylistAPITests {
 
 	/*
 	 * Endpoint: /playlists/{playlist_id} Get the playlist detail of the single
 	 * playlist Sending request body is option is GET request. Sending the
 	 * request body for the playlist Id which is expected in response
 	 */
-	@Description("Test Description: User should get a single playlist detail using Playlist ID")
+	@Description("User should get a single playlist detail using Playlist ID")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(priority = 0, description = "Verify Playlist detail using Playlist ID")
 	public void getSinglePlaylist() {
@@ -49,7 +49,7 @@ public class PlaylistTests {
 	/*
 	 * Endpoint: /users/{user_id}/playlists Create single playlist for a user
 	 */
-	@Description("Test Description: User should be able to create a Playlist using User ID")
+	@Description("User should be able to create a Playlist using User ID")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(priority = 1, description = "Verify create Playlist using User ID")
 	public void createPlaylist() {
@@ -66,7 +66,7 @@ public class PlaylistTests {
 	/*
 	 * Endpoint: /playlists/{playlist_id} Update single playlist detail
 	 */
-	@Description("Test Description: User should be able to update Plylist detail using Playlist ID")
+	@Description("User should be able to update Plylist detail using Playlist ID")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(priority = 2, description = "Verify update Playlist detail using Playlist ID")
 	public void updateSinglePlaylistDetail() {
@@ -80,7 +80,7 @@ public class PlaylistTests {
 	 * Endpoint: /users/{user_id}/playlists Get all the playlist detail of the
 	 * single user
 	 */
-	@Description("Test Description: User should be able to get all the Playlist for a particular User using User ID")
+	@Description("User should be able to get all the Playlist for a particular User using User ID")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(priority = 3, description = "Verify all Playlist for particular User using User ID")
 	public void getSingleUserAllPlaylist() {
@@ -102,7 +102,7 @@ public class PlaylistTests {
 	 * Endpoint: /users/{user_id}/playlists User should not be able to create
 	 * playlist with empty name
 	 */
-	@Description("Test Description: User should not be able to create Playlist with empty name")
+	@Description("User should not be able to create Playlist with empty name")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(priority = 4, description = "Verify create playlist with empty name")
 	public void notAbleToCreatePlaylistWithEmptyName() {
@@ -119,7 +119,7 @@ public class PlaylistTests {
 	 * Endpoint: /users/{user_id}/playlists User should not be able to create
 	 * playlist with invalid access token
 	 */
-	@Description("Test Description: User should not be able to create Playlist using invalid Access Token")
+	@Description("User should not be able to create Playlist using invalid Access Token")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(priority = 5, description = "Verify create playlist using invalid access token")
 	public void notAbleToCreatePlaylistUsingInvalidAccessToken() {
