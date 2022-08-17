@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\503219181\AppData\Local\Temp\testng-eclipse-58088365\testng-customsuite.xml</span>
+                    <span>C:\Users\503219181\AppData\Local\Temp\testng-eclipse-172507923\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -169,10 +169,10 @@
                   <span class="method-name">getSingleUserAllPlaylist</span>
                   <div class="stack-trace">java.lang.AssertionError: 
 Expected: iterable with items [&quot;Dilip Walk Playlist&quot;, &quot;Dilip Walk Playlist&quot;, &quot;Dilip Walk Playlist&quot;, &quot;Dilip Walk Playlist&quot;, &quot;Dilip Walk Playlist&quot;, &quot;Dilip Walk Playlist&quot;, &quot;Dilip Walk Playlist&quot;, &quot;Dilip Walk Playlist&quot;, &quot;Dilip Walk Playlist&quot;, &quot;Dilip Walk Playlist&quot;, &quot;Dilip Walk Playlist&quot;, &quot;Dilip Walk Playlist&quot;, &quot;Dilip Walk Playlist&quot;, &quot;Dilip Walk Playlist&quot;, &quot;Dilip Walk Playlist&quot;, &quot;Dilip Cardio Playlist&quot;, &quot;Dilip Gym Playlist&quot;, &quot;Dilip Talk Playlist&quot;, &quot;Dilip Empty Playlist&quot;, &quot;Dilip Learning Playlist&quot;, &quot;Dilip Timepass Playlist&quot;, &quot;Dilip Trace Playlist&quot;] in any order
-     but: not matched: &quot;Playlist5_ j vagsxD -__3jupy&quot;
+     but: not matched: &quot;Playlist,---__o_3,M 6_-j8a _&quot;
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-	at com.spotify.oauth2.test.PlaylistAPITests.getSingleUserAllPlaylist(PlaylistAPITests.java:96)
+	at com.spotify.oauth2.test.PlaylistAPITests.getSingleUserAllPlaylist(PlaylistAPITests.java:115)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -239,7 +239,7 @@ Expected content-type &quot;JSON&quot; doesn&apos;t match actual content-type &q
 	at io.restassured.internal.ValidatableResponseImpl.spec(ValidatableResponseImpl.groovy)
 	at com.spotify.oauth2.api.RestResource.put(RestResource.java:40)
 	at com.spotify.oauth2.api.applicationapi.PlaylistAPI.put(PlaylistAPI.java:39)
-	at com.spotify.oauth2.test.PlaylistAPITests.updateSinglePlaylistDetail(PlaylistAPITests.java:76)
+	at com.spotify.oauth2.test.PlaylistAPITests.updateSinglePlaylistDetail(PlaylistAPITests.java:91)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -329,7 +329,7 @@ Expected content-type &quot;JSON&quot; doesn&apos;t match actual content-type &q
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\503219181\AppData\Local\Temp\testng-eclipse-58088365\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\503219181\AppData\Local\Temp\testng-eclipse-172507923\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -382,36 +382,36 @@ data.addRows(7);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'getSinglePlaylist')
 data.setCell(0, 2, 'com.spotify.oauth2.test.PlaylistAPITests')
-data.setCell(0, 3, 4195);
+data.setCell(0, 3, 5075);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'createPlaylist')
 data.setCell(1, 2, 'com.spotify.oauth2.test.PlaylistAPITests')
-data.setCell(1, 3, 667);
+data.setCell(1, 3, 577);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'notAbleToCreatePlaylistWithEmptyName')
+data.setCell(2, 1, 'updateSinglePlaylistDetail')
 data.setCell(2, 2, 'com.spotify.oauth2.test.PlaylistAPITests')
-data.setCell(2, 3, 586);
+data.setCell(2, 3, 388);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'updateSinglePlaylistDetail')
+data.setCell(3, 1, 'notAbleToCreatePlaylistWithEmptyName')
 data.setCell(3, 2, 'com.spotify.oauth2.test.PlaylistAPITests')
-data.setCell(3, 3, 397);
+data.setCell(3, 3, 362);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'getSingleUserAllPlaylist')
 data.setCell(4, 2, 'com.spotify.oauth2.test.PlaylistAPITests')
-data.setCell(4, 3, 308);
+data.setCell(4, 3, 288);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'notAbleToCreatePlaylistUsingExpiredAccessToken')
 data.setCell(5, 2, 'com.spotify.oauth2.test.PlaylistAPITests')
-data.setCell(5, 3, 272);
+data.setCell(5, 3, 210);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'notAbleToCreatePlaylistUsingInvalidAccessToken')
 data.setCell(6, 2, 'com.spotify.oauth2.test.PlaylistAPITests')
-data.setCell(6, 3, 183);
+data.setCell(6, 3, 191);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 6 seconds</span>
+              <span class="suite-total-time">Total running time: 7 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -444,59 +444,59 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">getSinglePlaylist</span>
-                <span class="method-start">99 ms</span>
+                <span class="method-start">97 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod(public void com.spotify.oauth2.test.PlaylistAPITests.createPlaylist())</span>
-                <span class="method-start">4304 ms</span>
+                <span class="method-start">5186 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">createPlaylist</span>
-                <span class="method-start">4307 ms</span>
+                <span class="method-start">5189 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod(public void com.spotify.oauth2.test.PlaylistAPITests.updateSinglePlaylistDetail())</span>
-                <span class="method-start">4995 ms</span>
+                <span class="method-start">5771 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">updateSinglePlaylistDetail</span>
-                <span class="method-start">4998 ms</span>
+                <span class="method-start">5774 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod(public void com.spotify.oauth2.test.PlaylistAPITests.getSingleUserAllPlaylist())</span>
-                <span class="method-start">5400 ms</span>
+                <span class="method-start">6174 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">getSingleUserAllPlaylist</span>
-                <span class="method-start">5403 ms</span>
+                <span class="method-start">6176 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod(public void com.spotify.oauth2.test.PlaylistAPITests.notAbleToCreatePlaylistWithEmptyName())</span>
-                <span class="method-start">5715 ms</span>
+                <span class="method-start">6470 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">notAbleToCreatePlaylistWithEmptyName</span>
-                <span class="method-start">5718 ms</span>
+                <span class="method-start">6473 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod(public void com.spotify.oauth2.test.PlaylistAPITests.notAbleToCreatePlaylistUsingInvalidAccessToken(...)</span>
-                <span class="method-start">6309 ms</span>
+                <span class="method-start">6844 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">notAbleToCreatePlaylistUsingInvalidAccessToken</span>
-                <span class="method-start">6312 ms</span>
+                <span class="method-start">6850 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod(public void com.spotify.oauth2.test.PlaylistAPITests.notAbleToCreatePlaylistUsingExpiredAccessToken(...)</span>
-                <span class="method-start">6499 ms</span>
+                <span class="method-start">7068 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">notAbleToCreatePlaylistUsingExpiredAccessToken</span>
-                <span class="method-start">6502 ms</span>
+                <span class="method-start">7073 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -18,10 +18,13 @@ import com.spotify.oauth2.util.RestUtil;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Issue;
+import io.qameta.allure.Link;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
+import io.qameta.allure.TmsLink;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
@@ -34,6 +37,10 @@ public class PlaylistAPITests extends BaseTest {
 	 * playlist Sending request body is option is GET request. Sending the
 	 * request body for the playlist Id which is expected in response
 	 */
+	@Link("https://api.spotify.com/v1/playlists/4NHI4v5Ykj1fwSOpplmoxo")
+	@Link(name = "Get Playlist by Playlist ID", type = "GET")
+	@Issue("DE763846")
+	@TmsLink("TMS479372")
 	@Description("User should get a single playlist detail using Playlist ID")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(priority = 0, description = "Verify Playlist detail using Playlist ID")
@@ -51,6 +58,10 @@ public class PlaylistAPITests extends BaseTest {
 	/*
 	 * Endpoint: /users/{user_id}/playlists Create single playlist for a user
 	 */
+	@Link("https://api.spotify.com/v1/users/31rmk3j2lxqk3jbuztxtyrh3ng5a/playlists")
+	@Link(name = "Create Playlist by User ID", type = "POST")
+	@Issue("DE878932")
+	@TmsLink("TMS893242")
 	@Description("User should be able to create a Playlist using User ID")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(priority = 1, description = "Verify create Playlist using User ID")
@@ -67,6 +78,10 @@ public class PlaylistAPITests extends BaseTest {
 	/*
 	 * Endpoint: /playlists/{playlist_id} Update single playlist detail
 	 */
+	@Link("https://api.spotify.com/v1/playlists/0X8Iyrxgy7cFrGBsRBxsRL")
+	@Link(name = "Update Playlist by Playlist ID", type = "PUT")
+	@Issue("DE983023")
+	@TmsLink("TMS345454")
 	@Description("User should be able to update Plylist detail using Playlist ID")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(priority = 2, description = "Verify update Playlist detail using Playlist ID")
@@ -81,6 +96,10 @@ public class PlaylistAPITests extends BaseTest {
 	 * Endpoint: /users/{user_id}/playlists Get all the playlist detail of the
 	 * single user
 	 */
+	@Link("https://api.spotify.com/v1/users/31rmk3j2lxqk3jbuztxtyrh3ng5a/playlists")
+	@Link(name = "Get all Playlist by Playlist ID", type = "GET")
+	@Issue("DE342356")
+	@TmsLink("TMS949373")
 	@Description("User should be able to get all the Playlist for a particular User using User ID")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(priority = 3, description = "Verify all Playlist for particular User using User ID")
@@ -107,6 +126,10 @@ public class PlaylistAPITests extends BaseTest {
 	 * Endpoint: /users/{user_id}/playlists User should not be able to create
 	 * playlist with empty name
 	 */
+	@Link("https://api.spotify.com/v1/users/31rmk3j2lxqk3jbuztxtyrh3ng5a/playlists")
+	@Link(name = "Create Playlist with empty Playlist Name by User ID", type = "POST")
+	@Issue("DE038364")
+	@TmsLink("TMS810173")
 	@Description("User should not be able to create Playlist with empty name")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(priority = 4, description = "Verify create playlist with empty name")
@@ -124,6 +147,10 @@ public class PlaylistAPITests extends BaseTest {
 	 * Endpoint: /users/{user_id}/playlists User should not be able to create
 	 * playlist with invalid access token
 	 */
+	@Link("https://api.spotify.com/v1/users/31rmk3j2lxqk3jbuztxtyrh3ng5a/playlists")
+	@Link(name = "Create Playlists with Invalid Access Token by User ID", type = "POST")
+	@Issue("DE797984")
+	@TmsLink("TMS203848")
 	@Description("User should not be able to create Playlist using invalid Access Token")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(priority = 5, description = "Verify create playlist using invalid access token")
@@ -145,6 +172,10 @@ public class PlaylistAPITests extends BaseTest {
 	 * Endpoint: /users/{user_id}/playlists User should not be able to create
 	 * playlist with expired access token
 	 */
+	@Link("https://api.spotify.com/v1/users/31rmk3j2lxqk3jbuztxtyrh3ng5a/playlists")
+	@Link(name = "Create Playlists with Expired Access Token by User ID", type = "POST")
+	@Issue("DE348595")
+	@TmsLink("TMS989544")
 	@Description("Test Description: User should not be able to create Playlist using expired Access Token")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(priority = 6, description = "Verify create playlist using expired access token")
