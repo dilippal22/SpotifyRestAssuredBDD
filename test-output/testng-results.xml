@@ -2,20 +2,53 @@
 <testng-results skipped="0" failed="2" ignored="0" total="7" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="8269" started-at="2022-08-16T12:48:01Z" finished-at="2022-08-16T12:48:09Z">
+  <suite name="Default suite" duration-ms="6815" started-at="2022-08-17T06:33:29Z" finished-at="2022-08-17T06:33:36Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="8269" started-at="2022-08-16T12:48:01Z" finished-at="2022-08-16T12:48:09Z">
-      <class name="com.spotify.oauth2.test.PlaylistTests">
-        <test-method status="PASS" signature="getSinglePlaylist()[pri:0, instance:com.spotify.oauth2.test.PlaylistTests@3add81c4]" name="getSinglePlaylist" duration-ms="5739" started-at="2022-08-16T18:18:01Z" description="Verify Playlist detail using Playlist ID" finished-at="2022-08-16T18:18:07Z">
+    <test name="Default test" duration-ms="6815" started-at="2022-08-17T06:33:29Z" finished-at="2022-08-17T06:33:36Z">
+      <class name="com.spotify.oauth2.test.PlaylistAPITests">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.spotify.oauth2.test.PlaylistAPITests@20765ed5]" name="beforeMethod" is-config="true" duration-ms="18" started-at="2022-08-17T12:03:29Z" finished-at="2022-08-17T12:03:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.spotify.oauth2.test.PlaylistAPITests.getSinglePlaylist()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="getSinglePlaylist()[pri:0, instance:com.spotify.oauth2.test.PlaylistAPITests@20765ed5]" name="getSinglePlaylist" duration-ms="4195" started-at="2022-08-17T12:03:29Z" description="Verify Playlist detail using Playlist ID" finished-at="2022-08-17T12:03:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getSinglePlaylist -->
-        <test-method status="PASS" signature="createPlaylist()[pri:1, instance:com.spotify.oauth2.test.PlaylistTests@3add81c4]" name="createPlaylist" duration-ms="490" started-at="2022-08-16T18:18:07Z" description="Verify create Playlist using User ID" finished-at="2022-08-16T18:18:07Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.spotify.oauth2.test.PlaylistAPITests@20765ed5]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2022-08-17T12:03:33Z" finished-at="2022-08-17T12:03:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.spotify.oauth2.test.PlaylistAPITests.createPlaylist()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="createPlaylist()[pri:1, instance:com.spotify.oauth2.test.PlaylistAPITests@20765ed5]" name="createPlaylist" duration-ms="667" started-at="2022-08-17T12:03:33Z" description="Verify create Playlist using User ID" finished-at="2022-08-17T12:03:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createPlaylist -->
-        <test-method status="FAIL" signature="updateSinglePlaylistDetail()[pri:2, instance:com.spotify.oauth2.test.PlaylistTests@3add81c4]" name="updateSinglePlaylistDetail" duration-ms="289" started-at="2022-08-16T18:18:07Z" description="Verify update Playlist detail using Playlist ID" finished-at="2022-08-16T18:18:08Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.spotify.oauth2.test.PlaylistAPITests@20765ed5]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2022-08-17T12:03:34Z" finished-at="2022-08-17T12:03:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.spotify.oauth2.test.PlaylistAPITests.updateSinglePlaylistDetail()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="updateSinglePlaylistDetail()[pri:2, instance:com.spotify.oauth2.test.PlaylistAPITests@20765ed5]" name="updateSinglePlaylistDetail" duration-ms="397" started-at="2022-08-17T12:03:34Z" description="Verify update Playlist detail using Playlist ID" finished-at="2022-08-17T12:03:34Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[1 expectation failed.
@@ -27,26 +60,37 @@ Expected content-type "JSON" doesn't match actual content-type "".
 Expected content-type "JSON" doesn't match actual content-type "".
 
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
-	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:58)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:237)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:101)
+	at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:92)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$spec(ValidatableResponseImpl.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.spec(ValidatableResponseImpl.groovy:76)
+	at io.restassured.internal.ValidatableResponseImpl.spec(ValidatableResponseImpl.groovy)
 	at com.spotify.oauth2.api.RestResource.put(RestResource.java:40)
 	at com.spotify.oauth2.api.applicationapi.PlaylistAPI.put(PlaylistAPI.java:39)
-	at com.spotify.oauth2.test.PlaylistTests.updateSinglePlaylistDetail(PlaylistTests.java:75)
+	at com.spotify.oauth2.test.PlaylistAPITests.updateSinglePlaylistDetail(PlaylistAPITests.java:76)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
 	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
@@ -74,24 +118,35 @@ Expected content-type "JSON" doesn't match actual content-type "".
           <reporter-output>
           </reporter-output>
         </test-method> <!-- updateSinglePlaylistDetail -->
-        <test-method status="FAIL" signature="getSingleUserAllPlaylist()[pri:3, instance:com.spotify.oauth2.test.PlaylistTests@3add81c4]" name="getSingleUserAllPlaylist" duration-ms="826" started-at="2022-08-16T18:18:08Z" description="Verify all Playlist for particular User using User ID" finished-at="2022-08-16T18:18:09Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.spotify.oauth2.test.PlaylistAPITests@20765ed5]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2022-08-17T12:03:34Z" finished-at="2022-08-17T12:03:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.spotify.oauth2.test.PlaylistAPITests.getSingleUserAllPlaylist()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="getSingleUserAllPlaylist()[pri:3, instance:com.spotify.oauth2.test.PlaylistAPITests@20765ed5]" name="getSingleUserAllPlaylist" duration-ms="308" started-at="2022-08-17T12:03:34Z" description="Verify all Playlist for particular User using User ID" finished-at="2022-08-17T12:03:35Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[
-Expected: iterable with items ["Dilip Walk Playlist", "Dilip Cardio Playlist", "Dilip Gym Playlist", "Dilip Empty Playlist", "Dilip Empty Playlist", "Dilip Learning Playlist", "Dilip Timepass Playlist", "Dilip Trace Playlist", "Dilip Travel Playlist", "dp"] in any order
-     but: not matched: "Dilip Walk Playlist"]]>
+Expected: iterable with items ["Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Cardio Playlist", "Dilip Gym Playlist", "Dilip Talk Playlist", "Dilip Empty Playlist", "Dilip Learning Playlist", "Dilip Timepass Playlist", "Dilip Trace Playlist"] in any order
+     but: not matched: "Playlist5_ j vagsxD -__3jupy"]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: 
-Expected: iterable with items ["Dilip Walk Playlist", "Dilip Cardio Playlist", "Dilip Gym Playlist", "Dilip Empty Playlist", "Dilip Empty Playlist", "Dilip Learning Playlist", "Dilip Timepass Playlist", "Dilip Trace Playlist", "Dilip Travel Playlist", "dp"] in any order
-     but: not matched: "Dilip Walk Playlist"
+Expected: iterable with items ["Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Cardio Playlist", "Dilip Gym Playlist", "Dilip Talk Playlist", "Dilip Empty Playlist", "Dilip Learning Playlist", "Dilip Timepass Playlist", "Dilip Trace Playlist"] in any order
+     but: not matched: "Playlist5_ j vagsxD -__3jupy"
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-	at com.spotify.oauth2.test.PlaylistTests.getSingleUserAllPlaylist(PlaylistTests.java:94)
+	at com.spotify.oauth2.test.PlaylistAPITests.getSingleUserAllPlaylist(PlaylistAPITests.java:96)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
 	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
@@ -119,19 +174,52 @@ Expected: iterable with items ["Dilip Walk Playlist", "Dilip Cardio Playlist", "
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getSingleUserAllPlaylist -->
-        <test-method status="PASS" signature="notAbleToCreatePlaylistWithEmptyName()[pri:4, instance:com.spotify.oauth2.test.PlaylistTests@3add81c4]" name="notAbleToCreatePlaylistWithEmptyName" duration-ms="237" started-at="2022-08-16T18:18:09Z" description="Verify create playlist with empty name" finished-at="2022-08-16T18:18:09Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.spotify.oauth2.test.PlaylistAPITests@20765ed5]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2022-08-17T12:03:35Z" finished-at="2022-08-17T12:03:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.spotify.oauth2.test.PlaylistAPITests.notAbleToCreatePlaylistWithEmptyName()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="notAbleToCreatePlaylistWithEmptyName()[pri:4, instance:com.spotify.oauth2.test.PlaylistAPITests@20765ed5]" name="notAbleToCreatePlaylistWithEmptyName" duration-ms="586" started-at="2022-08-17T12:03:35Z" description="Verify create playlist with empty name" finished-at="2022-08-17T12:03:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- notAbleToCreatePlaylistWithEmptyName -->
-        <test-method status="PASS" signature="notAbleToCreatePlaylistUsingInvalidAccessToken()[pri:5, instance:com.spotify.oauth2.test.PlaylistTests@3add81c4]" name="notAbleToCreatePlaylistUsingInvalidAccessToken" duration-ms="207" started-at="2022-08-16T18:18:09Z" description="Verify create playlist using invalid access token" finished-at="2022-08-16T18:18:09Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.spotify.oauth2.test.PlaylistAPITests@20765ed5]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2022-08-17T12:03:35Z" finished-at="2022-08-17T12:03:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.spotify.oauth2.test.PlaylistAPITests.notAbleToCreatePlaylistUsingInvalidAccessToken()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="notAbleToCreatePlaylistUsingInvalidAccessToken()[pri:5, instance:com.spotify.oauth2.test.PlaylistAPITests@20765ed5]" name="notAbleToCreatePlaylistUsingInvalidAccessToken" duration-ms="183" started-at="2022-08-17T12:03:35Z" description="Verify create playlist using invalid access token" finished-at="2022-08-17T12:03:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- notAbleToCreatePlaylistUsingInvalidAccessToken -->
-        <test-method status="PASS" signature="notAbleToCreatePlaylistUsingExpiredAccessToken()[pri:6, instance:com.spotify.oauth2.test.PlaylistTests@3add81c4]" name="notAbleToCreatePlaylistUsingExpiredAccessToken" duration-ms="278" started-at="2022-08-16T18:18:09Z" description="Verify create playlist using expired access token" finished-at="2022-08-16T18:18:09Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.spotify.oauth2.test.PlaylistAPITests@20765ed5]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2022-08-17T12:03:35Z" finished-at="2022-08-17T12:03:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.spotify.oauth2.test.PlaylistAPITests.notAbleToCreatePlaylistUsingExpiredAccessToken()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="notAbleToCreatePlaylistUsingExpiredAccessToken()[pri:6, instance:com.spotify.oauth2.test.PlaylistAPITests@20765ed5]" name="notAbleToCreatePlaylistUsingExpiredAccessToken" duration-ms="272" started-at="2022-08-17T12:03:36Z" description="Verify create playlist using expired access token" finished-at="2022-08-17T12:03:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- notAbleToCreatePlaylistUsingExpiredAccessToken -->
-      </class> <!-- com.spotify.oauth2.test.PlaylistTests -->
+      </class> <!-- com.spotify.oauth2.test.PlaylistAPITests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

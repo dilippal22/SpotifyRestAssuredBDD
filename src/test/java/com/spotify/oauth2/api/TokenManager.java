@@ -13,7 +13,7 @@ public class TokenManager {
 	private static String accessToken;
 	private static Instant expiryTime;
 	
-	public static String getAccessToken(){
+	public synchronized static String getAccessToken(){
 		try{
 			if(accessToken == null || Instant.now().isAfter(expiryTime)){
 				System.out.println("Renewing Token...");

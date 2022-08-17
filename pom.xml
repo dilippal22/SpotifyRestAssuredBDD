@@ -12,8 +12,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<rest-assured>5.1.1</rest-assured>
-		<testng-version>7.6.1</testng-version>
+		<rest-assured>4.2.0</rest-assured>
+		<testng-version>7.4.0</testng-version>
 		<maven-compiler-plugin-version>3.10.1</maven-compiler-plugin-version>
 		<maven-surefire-plugin-version>3.0.0-M7</maven-surefire-plugin-version>
 		<aspectj.version>1.9.6</aspectj.version>
@@ -35,12 +35,14 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven-surefire-plugin-version}</version>
 				<configuration>
+					<parallel>methods</parallel>
+					<threadCount>10</threadCount>
 					<testFailureIgnore>true</testFailureIgnore>
 					<argLine>
 						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
 					</argLine>
 					<suiteXmlFiles>
-						<suiteXmlFile>TestNG.xml</suiteXmlFile>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 				<dependencies>
@@ -105,6 +107,13 @@
 			<groupId>io.qameta.allure</groupId>
 			<artifactId>allure-testng</artifactId>
 			<version>2.19.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>1.0.2</version>
 		</dependency>
 	</dependencies>
 

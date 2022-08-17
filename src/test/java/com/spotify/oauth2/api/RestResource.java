@@ -12,7 +12,7 @@ public class RestResource {
 	
 	public static Response get(String path, String accessToken){
 		return given(SpecBuilder.requestSpecification()).
-					header("authorization", "Bearer " + accessToken).
+					auth().oauth2(accessToken).
 				when().
 					get(path).
 				then().spec(SpecBuilder.responseSpecification()).
@@ -22,7 +22,7 @@ public class RestResource {
 	
 	public static Response post(String path, Playlist requestPlaylist, String accessToken){
 		return given(SpecBuilder.requestSpecification()).
-					header("authorization", "Bearer " + accessToken).
+					auth().oauth2(accessToken).
 					body(requestPlaylist).
 				when().
 					post(path).
@@ -33,7 +33,7 @@ public class RestResource {
 	
 	public static Response put(String path, Playlist requestPlaylist, String accessToken){
 		return given(SpecBuilder.requestSpecification()).
-					header("authorization", "Bearer " + accessToken).
+					auth().oauth2(accessToken).
 					body(requestPlaylist).
 				when().
 					put(path).

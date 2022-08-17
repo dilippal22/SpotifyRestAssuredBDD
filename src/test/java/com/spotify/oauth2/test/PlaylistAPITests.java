@@ -8,10 +8,12 @@ import java.util.List;
 
 import org.testng.annotations.Test;
 
+import com.spotify.oauth2.api.StatusCode;
 import com.spotify.oauth2.api.applicationapi.PlaylistAPI;
 import com.spotify.oauth2.pojo.ErrorRoot;
 import com.spotify.oauth2.pojo.Playlist;
 import com.spotify.oauth2.util.DataReader;
+import com.spotify.oauth2.util.FakerUtils;
 import com.spotify.oauth2.util.RestUtil;
 
 import io.qameta.allure.Description;
@@ -25,7 +27,7 @@ import io.restassured.response.Response;
 
 @Feature("Playlist API")
 @Story("Playlist CRUD Operation")
-public class PlaylistAPITests {
+public class PlaylistAPITests extends BaseTest {
 
 	/*
 	 * Endpoint: /playlists/{playlist_id} Get the playlist detail of the single
@@ -40,7 +42,7 @@ public class PlaylistAPITests {
 				false);
 
 		Response response = PlaylistAPI.getPlaylist(DataReader.getInstance().getPlaylistId());
-		RestUtil.assertStatusCode(response.getStatusCode(), 200);
+		RestUtil.assertStatusCode(response.getStatusCode(), StatusCode.CODE_200.getStatusCode());
 
 		Playlist responsePlaylist = response.as(Playlist.class);
 		assertPlaylistEqual(responsePlaylist, requestPlaylist);
@@ -53,11 +55,10 @@ public class PlaylistAPITests {
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(priority = 1, description = "Verify create Playlist using User ID")
 	public void createPlaylist() {
-		Playlist requestPlaylist = playlistBuilder("Dilip Walk Playlist", "Dilip recently created Walk Playlist",
-				false);
+		Playlist requestPlaylist = playlistBuilder(FakerUtils.generateName(), FakerUtils.generateDescription(), false);
 
 		Response response = PlaylistAPI.post(requestPlaylist);
-		RestUtil.assertStatusCode(response.getStatusCode(), 201);
+		RestUtil.assertStatusCode(response.getStatusCode(), StatusCode.CODE_201.getStatusCode());
 
 		Playlist responsePlaylist = response.as(Playlist.class);
 		assertPlaylistEqual(responsePlaylist, requestPlaylist);
@@ -70,10 +71,10 @@ public class PlaylistAPITests {
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(priority = 2, description = "Verify update Playlist detail using Playlist ID")
 	public void updateSinglePlaylistDetail() {
-		Playlist updatePlaylist = playlistBuilder("Dilip Talk Playlist", "Dilip recently created Talk Playlist", false);
+		Playlist updatePlaylist = playlistBuilder(FakerUtils.generateName(), FakerUtils.generateDescription(), false);
 
 		Response response = PlaylistAPI.put(DataReader.getInstance().getUpdatePlaylistId(), updatePlaylist);
-		RestUtil.assertStatusCode(response.getStatusCode(), 200);
+		RestUtil.assertStatusCode(response.getStatusCode(), StatusCode.CODE_200.getStatusCode());
 	}
 
 	/*
@@ -85,17 +86,21 @@ public class PlaylistAPITests {
 	@Test(priority = 3, description = "Verify all Playlist for particular User using User ID")
 	public void getSingleUserAllPlaylist() {
 		Response response = PlaylistAPI.getAllPlaylist();
-		RestUtil.assertStatusCode(response.getStatusCode(), 200);
+		RestUtil.assertStatusCode(response.getStatusCode(), StatusCode.CODE_200.getStatusCode());
 
 		String responseString = response.asString();
 		List<String> responsePlaylistName = JsonPath.from(responseString).getList("items.name");
+		System.out.println("responsePlaylistName Name is: " + responsePlaylistName);
 		int responseTotalPlaylist = JsonPath.from(responseString).getInt("items.size()");
 
 		assertThat(responsePlaylistName,
-				containsInAnyOrder("Dilip Walk Playlist", "Dilip Cardio Playlist", "Dilip Gym Playlist",
-						"Dilip Empty Playlist", "Dilip Empty Playlist", "Dilip Learning Playlist",
-						"Dilip Timepass Playlist", "Dilip Trace Playlist", "Dilip Travel Playlist", "dp"));
-		RestUtil.assertSizeEqualTo(responseTotalPlaylist, 10);
+				containsInAnyOrder("Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist",
+						"Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist",
+						"Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist",
+						"Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist", "Dilip Walk Playlist",
+						"Dilip Cardio Playlist", "Dilip Gym Playlist", "Dilip Talk Playlist", "Dilip Empty Playlist",
+						"Dilip Learning Playlist", "Dilip Timepass Playlist", "Dilip Trace Playlist"));
+		RestUtil.assertSizeEqualTo(responseTotalPlaylist, 22);
 	}
 
 	/*
@@ -106,13 +111,13 @@ public class PlaylistAPITests {
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(priority = 4, description = "Verify create playlist with empty name")
 	public void notAbleToCreatePlaylistWithEmptyName() {
-		Playlist requestPayloadWithEmptyName = playlistBuilder("", "Dilip recently created Empty Playlist", false);
+		Playlist requestPayloadWithEmptyName = playlistBuilder("", FakerUtils.generateDescription(), false);
 
 		Response response = PlaylistAPI.post(requestPayloadWithEmptyName);
-		RestUtil.assertStatusCode(response.getStatusCode(), 400);
+		RestUtil.assertStatusCode(response.getStatusCode(), StatusCode.CODE_400.getStatusCode());
 
 		ErrorRoot responseError = response.as(ErrorRoot.class);
-		RestUtil.assertError(responseError, 400, "Missing required field: name");
+		RestUtil.assertError(responseError, StatusCode.CODE_400.getStatusCode(), StatusCode.CODE_400.getMessage());
 	}
 
 	/*
@@ -125,19 +130,20 @@ public class PlaylistAPITests {
 	public void notAbleToCreatePlaylistUsingInvalidAccessToken() {
 		String invalidToken = "BQCz0XmfN5jG_XaaHTFxqffx8UwkUPtugUvwHVeAjxQ4lZycwmrcaOHOWlYwZBSovymzgh_VfqnF6CFE-flR3YQpFv6jWRUz7f3b1jN4-jqWpJAKxnnkNiP7Wmg4Chzy9vtT_89fHr_8YT5aJNv2PNMn_mEcbuBegbyeAz444o2uTd4V8fjsT11rRbmlGSpWe92ymN0kghHsI4X05OGC37qKypSrZ-FICvtJxAQFezMPxZn8aU3oxlTqbp5Jims8-ADvTDndle_qdE4";
 
-		Playlist requestPayloadWithInvalidToken = playlistBuilder("Dilip Empty Playlist", "Dilip Empty Playlist",
-				false);
+		Playlist requestPayloadWithInvalidToken = playlistBuilder(FakerUtils.generateName(),
+				FakerUtils.generateDescription(), false);
 
 		Response response = PlaylistAPI.post(requestPayloadWithInvalidToken, invalidToken);
-		RestUtil.assertStatusCode(response.getStatusCode(), 401);
+		RestUtil.assertStatusCode(response.getStatusCode(), StatusCode.CODE_401_INVALID_TOKEN.getStatusCode());
 
 		ErrorRoot responseError = response.as(ErrorRoot.class);
-		RestUtil.assertError(responseError, 401, "Invalid access token");
+		RestUtil.assertError(responseError, StatusCode.CODE_401_INVALID_TOKEN.getStatusCode(),
+				StatusCode.CODE_401_INVALID_TOKEN.getMessage());
 	}
 
 	/*
 	 * Endpoint: /users/{user_id}/playlists User should not be able to create
-	 * playlist with invalid access token
+	 * playlist with expired access token
 	 */
 	@Description("Test Description: User should not be able to create Playlist using expired Access Token")
 	@Severity(SeverityLevel.CRITICAL)
@@ -145,14 +151,15 @@ public class PlaylistAPITests {
 	public void notAbleToCreatePlaylistUsingExpiredAccessToken() {
 		String expiredToken = "BQCz0XmfN5jG_XaaHTFxqffx8UwkUPtugUvwHVeAjxQ4lZycwmrcaOHOWlYwZBSovymzgh_VfqnF6CFE-flR3YQpFv6jWRUz7f3b1jN4-jqWpJAKxnnkNiP7Wmg4Chzy9vtT_89fHr_8YT5aJNv2PNMn_mEcbuBegbyeAz444o2uTd4V8fjsT11rRbmlGSpWe92ymN0kghHsI4X05OGC37qKypSrZ-FICvtJxAQFezMPxZn8aU3oxlTqbp5Jims8-ADvTDndle_qdE4e";
 
-		Playlist requestPayloadWithInvalidToken = playlistBuilder("Dilip Empty Playlist",
-				"Dilip recently created Empty Playlist", false);
+		Playlist requestPayloadWithInvalidToken = playlistBuilder(FakerUtils.generateName(),
+				FakerUtils.generateDescription(), false);
 
 		Response response = PlaylistAPI.post(requestPayloadWithInvalidToken, expiredToken);
-		RestUtil.assertStatusCode(response.getStatusCode(), 401);
+		RestUtil.assertStatusCode(response.getStatusCode(), StatusCode.CODE_401_EXPIRED_TOKEN.getStatusCode());
 
 		ErrorRoot responseError = response.as(ErrorRoot.class);
-		RestUtil.assertError(responseError, 401, "The access token expired");
+		RestUtil.assertError(responseError, StatusCode.CODE_401_EXPIRED_TOKEN.getStatusCode(),
+				StatusCode.CODE_401_EXPIRED_TOKEN.getMessage());
 	}
 
 	@Step

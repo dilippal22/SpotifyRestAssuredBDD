@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.spotify.oauth2.test.PlaylistTests">
+      <class name="com.spotify.oauth2.test.PlaylistAPITests">
         <methods>
           <include name="updateSinglePlaylistDetail"/>
+          <include name="beforeMethod"/>
           <include name="getSingleUserAllPlaylist"/>
         </methods>
-      </class> <!-- com.spotify.oauth2.test.PlaylistTests -->
+      </class> <!-- com.spotify.oauth2.test.PlaylistAPITests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
