@@ -11,16 +11,16 @@ public enum StatusCode {
 	private final int StatucCode;
 	private final String message;
 
-	StatusCode(int StatusCode, String message){
+	StatusCode(int StatusCode, String message) {
 		this.StatucCode = StatusCode;
 		this.message = message;
 	}
-	
-	public int getStatusCode(){
+
+	public int getStatusCode() {
 		return StatucCode;
 	}
-	
-	public String getMessage(){
+
+	public String getMessage() {
 		return message;
 	}
 }
