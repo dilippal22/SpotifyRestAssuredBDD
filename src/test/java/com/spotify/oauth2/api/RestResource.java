@@ -10,7 +10,7 @@ import io.restassured.response.Response;
 
 public class RestResource {
 	
-	public static Response get(String path, String accessToken){
+	public static Response get(String path, String accessToken) {
 		return given(SpecBuilder.requestSpecification()).
 					auth().oauth2(accessToken).
 				when().
@@ -20,7 +20,7 @@ public class RestResource {
 					response();
 	}
 	
-	public static Response post(String path, Playlist requestPlaylist, String accessToken){
+	public static Response post(String path, Playlist requestPlaylist, String accessToken) {
 		return given(SpecBuilder.requestSpecification()).
 					auth().oauth2(accessToken).
 					body(requestPlaylist).
@@ -31,7 +31,7 @@ public class RestResource {
 					response();
 	}
 	
-	public static Response put(String path, Playlist requestPlaylist, String accessToken){
+	public static Response put(String path, Playlist requestPlaylist, String accessToken) {
 		return given(SpecBuilder.requestSpecification()).
 					auth().oauth2(accessToken).
 					body(requestPlaylist).
